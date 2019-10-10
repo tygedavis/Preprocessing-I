@@ -160,6 +160,13 @@ html {
 	color: gray;
 }
 
+.contactFont(){
+	font-size: 2rem;
+	font-family: @header-font;
+	color: gray;
+	text-decoration: none;
+}
+
 p {
 	font-family: @font-family;
 }
@@ -321,18 +328,18 @@ nav {
 				font-size: @font-size;
 				padding: 10px 50px;
 
-				@media (max-width: 500px){
-					padding: 10px 20px
-				}//closes @media 500px
+				@media (max-width: 500px) {
+					padding: 10px 20px;
+				} //closes @media 500px
 			} // closes h6
 
 			p {
 				font-size: @font-size;
 				padding: 10px 50px;
 
-				@media (max-width: 500px){
-					padding: 10px 25px
-				}//closes @media 500px
+				@media (max-width: 500px) {
+					padding: 10px 25px;
+				} //closes @media 500px
 			} //closes p
 		} //closes div in .workHistory
 
@@ -357,3 +364,58 @@ footer {
 		}
 	}
 }
+
+.navContact {
+	display: flex;
+	justify-content: center;
+	padding-left: 0px;
+
+	a {
+		border: 1px solid black;
+		border-radius: 10px;
+		padding: 20px 30px;
+		font-family: @font-family;
+	}
+
+	a:hover {
+		background-color: @background-gray;
+		color: white;
+	}
+}
+
+section {
+	display: flex;
+	justify-content: center;
+	.contactForm {
+		// border: 1px solid gray;
+		width: 45%;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		p{
+			.contactFont();
+			margin-left: 15px;
+			margin-top: 7px;
+		}
+
+		.message{
+			width: 95%;
+			height: 300px;
+			margin: 20px 0px;
+		}
+
+		div{
+			border: 1px solid gray;
+			border-radius: 7px;
+			width: 46%;
+			height: 40px;
+			margin: 0px 10px;
+		}
+	}//closes .contactForm
+
+	button{
+		padding: 10px 20px;
+		text-decoration: none;
+	}
+}//closes section
