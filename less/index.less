@@ -145,12 +145,22 @@ html {
 }
 
 @font-size: 1.6rem;
-@font-family: 'Crimson Text', serif; 
+@font-family: 'Crimson Text', serif;
 @header-font: 'Noto Sans', sans-serif;
 @h3-size: 2.4rem;
 @background-gray: #e3e3e3;
 
-p{
+.h3-sizes() {
+	font-family: @header-font;
+	font-size: @h3-size;
+}
+
+.nav-hover() {
+	text-decoration: underline;
+	color: gray;
+}
+
+p {
 	font-family: @font-family;
 }
 
@@ -170,9 +180,17 @@ nav {
 	} //ends a in nav
 
 	a:hover {
-		text-decoration: underline;
-		color: gray;
+		.nav-hover();
 	} //ends a:hover in nav
+
+	@media (max-width: 500px) {
+		justify-content: center;
+		padding: 0% 30%;
+
+		a {
+			padding: 0px 20px;
+		} //ends a in @media 500px
+	} //ends @media nav 500px
 } //ends nav
 
 .header {
@@ -222,12 +240,15 @@ nav {
 .summary {
 	display: flex;
 	justify-content: space-between;
-	height: 300px;
+	height: 350px;
+	// border: 1px solid gray;
 
-	@media (max-width: 800px){
+	@media (max-width: 500px) {
 		width: 100%;
-
-	}//closes @media .summary 800px
+		height: 650px;
+		margin-bottom: 100px;
+		flex-direction: column;
+	} //closes @media .summary 800px
 
 	div {
 		width: 48%;
@@ -235,9 +256,9 @@ nav {
 		margin-top: 20px;
 		line-height: 1.5;
 
-		@media (max-width: 800px){
+		@media (max-width: 500px) {
 			width: 100%;
-		}//closes @media div 800px
+		} //closes @media div 800px
 
 		h2 {
 			font-family: @header-font;
@@ -245,8 +266,7 @@ nav {
 		} //closes h2
 
 		h3 {
-			font-family: @header-font;
-			font-size: @h3-size;
+			.h3-sizes();
 		} //closes h3
 
 		p {
@@ -257,7 +277,7 @@ nav {
 	.skills {
 		margin-top: 0px;
 		width: 100%;
-		height:275px;
+		height: 275px;
 		border: 1px solid black;
 		display: flex;
 		flex-direction: column;
@@ -270,68 +290,70 @@ nav {
 	} //closes .skills
 } //closes .summary
 
-.work{
+.work {
 	display: flex;
 	flex-direction: column;
 	margin: 30px 0px;
 
-	div{
+	div {
 		width: 100%;
 		// border: 1px solid black;
 
-		h3{
-			font-family: @header-font;
-			font-size: @h3-size;
+		h3 {
+			.h3-sizes();
 			padding: 10px 0px;
-		}//closes h3
-	}//closes div in .works
+		} //closes h3
+	} //closes div in .works
 
-	.workHistory{
+	.workHistory {
 		display: flex;
 		flex-direction: column;
 
-		div{
+		div {
 			width: 100%;
 			display: flex;
 			// flex-direction: column;
 			justify-content: space-between;
 
-			h6{
+			h6 {
 				font-weight: bold;
 				font-family: @header-font;
 				font-size: @font-size;
 				padding: 10px 50px;
-			}// closes h6
 
-			p{
+				@media (max-width: 500px){
+					padding: 10px 20px
+				}//closes @media 500px
+			} // closes h6
+
+			p {
 				font-size: @font-size;
 				padding: 10px 50px;
-			}//closes p
-		}//closes div in .workHistory
 
-		.company1{
+				@media (max-width: 500px){
+					padding: 10px 25px
+				}//closes @media 500px
+			} //closes p
+		} //closes div in .workHistory
+
+		.company1 {
 			background-color: @background-gray;
-		}//closes .company1
+		} //closes .company1
 
-		.company3{
+		.company3 {
 			background-color: @background-gray;
-		}//closes company3
-	}//closes .workHistory
-}//closes .work
+		} //closes company3
+	} //closes .workHistory
+} //closes .work
 
-footer{
-	div{
+footer {
+	div {
 		margin-bottom: 20px;
 		display: flex;
 		justify-content: center;
 
-		p{
+		p {
 			font-size: @font-size;
 		}
 	}
-}
-
-h3{
-	font-family: @header-font;
-	font-size: @h3-size;
 }

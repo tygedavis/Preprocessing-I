@@ -159,6 +159,15 @@ nav a:hover {
   text-decoration: underline;
   color: gray;
 }
+@media (max-width: 500px) {
+  nav {
+    justify-content: center;
+    padding: 0% 30%;
+  }
+  nav a {
+    padding: 0px 20px;
+  }
+}
 .header {
   width: 100%;
   padding: 0px 30px;
@@ -199,11 +208,14 @@ nav a:hover {
 .summary {
   display: flex;
   justify-content: space-between;
-  height: 300px;
+  height: 350px;
 }
-@media (max-width: 800px) {
+@media (max-width: 500px) {
   .summary {
     width: 100%;
+    height: 650px;
+    margin-bottom: 100px;
+    flex-direction: column;
   }
 }
 .summary div {
@@ -212,7 +224,7 @@ nav a:hover {
   margin-top: 20px;
   line-height: 1.5;
 }
-@media (max-width: 800px) {
+@media (max-width: 500px) {
   .summary div {
     width: 100%;
   }
@@ -269,9 +281,19 @@ nav a:hover {
   font-size: 1.6rem;
   padding: 10px 50px;
 }
+@media (max-width: 500px) {
+  .work .workHistory div h6 {
+    padding: 10px 20px;
+  }
+}
 .work .workHistory div p {
   font-size: 1.6rem;
   padding: 10px 50px;
+}
+@media (max-width: 500px) {
+  .work .workHistory div p {
+    padding: 10px 25px;
+  }
 }
 .work .workHistory .company1 {
   background-color: #e3e3e3;
@@ -286,8 +308,4 @@ footer div {
 }
 footer div p {
   font-size: 1.6rem;
-}
-h3 {
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 2.4rem;
 }
